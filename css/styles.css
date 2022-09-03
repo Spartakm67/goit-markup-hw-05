@@ -48,8 +48,8 @@ ul {
 /* Opened tab effect for buttons*/
 .open-btn.current,
 .hero-btn.current {
-  color: #ffffff;
-  background-color: #2196f3;
+  color: var(--primary-text-color-theme-dark);
+  background-color: var(--accent-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
@@ -305,6 +305,24 @@ body {
   display: flex;
   align-items: center;
   gap: 30px;
+}
+.list-section-three-wrapper {
+  position: relative;
+}
+.section-three-header {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  background: rgba(47, 48, 58, 0.8);
+  color: var(--primary-text-color-theme-dark);
 }
 /* === Team Section #4 === */
 .section-four {
