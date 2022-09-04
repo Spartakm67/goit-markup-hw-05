@@ -54,7 +54,7 @@
         <section class="hero">
             <div class="container">
                 <h1 class="main-header">Ефективні рішення для вашого бізнесу</h1>
-                <button class="hero-btn current" type="button">Замовити послугу</button>
+                <button class="hero-btn current" type="button" data-modal-open>Замовити послугу</button>
             </div>
         </section>
         <!--The Benefits section #2-->
@@ -111,16 +111,23 @@
                 <h2 class="section-title">Чим ми займаємося</h2>
                 <ul class="picture-list list">
                     <li class="list-section-three-wrapper">
-                        <img src="./images/box1.jpg" alt="Набор коду на компьютері" width="370">
-                        <h3 class="section-three-header">Десктопні додатки</h3>
+                        <div class="section-three-wrapper">
+                            <img src="./images/box1.jpg" alt="Набор коду на компьютері" width="370">
+                            <h3 class="section-three-header">Десктопні додатки</h3>
+                        </div>
+
                     </li>
                     <li class="list-section-three-wrapper">
-                        <img src="./images/box2.jpg" alt="Розробка мобільного інтерфейсу" width="370">
-                        <h3 class="section-three-header">Мобільні додатки</h3>
+                        <div class="section-three-wrapper">
+                            <img src="./images/box2.jpg" alt="Розробка мобільного інтерфейсу" width="370">
+                            <h3 class="section-three-header">Мобільні додатки</h3>
+                        </div>
                     </li>
                     <li class="list-section-three-wrapper">
-                        <img src="./images/box3.jpg" alt="Розробка додатку на планшеті" width="370">
-                        <h3 class="section-three-header">Дизайнерські рішення</h3>
+                        <div class="section-three-wrapper">
+                            <img src="./images/box3.jpg" alt="Розробка додатку на планшеті" width="370">
+                            <h3 class="section-three-header">Дизайнерські рішення</h3>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -374,6 +381,16 @@
             </div>
         </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <button type="button" class="modal-close-btn" data-modal-close>
+                <svg class="modal-close-icon" width="18px" height="18px">
+                    <use href="./images/sprite.svg#icon-close"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <script src="./js/modal.js"></script>
 </body>
 
 </html>

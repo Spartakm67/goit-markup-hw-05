@@ -156,16 +156,26 @@ body {
   font-weight: 500;
   color: var(--primary-text-color-theme-light);
   transition: color var(--transition-dur-and-func);
-  /* transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
+  position: relative;
+  display: inline-block;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 .menu-link:hover,
 .menu-link:focus {
   color: var(--accent-color);
 }
-
+.menu-link.current::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  bottom: 0;
+  left: 0;
+  border-radius: 2px;
+  background-color: currentColor;
+}
 .mail {
   display: flex;
   align-items: center;
@@ -308,15 +318,14 @@ body {
   align-items: center;
   gap: 30px;
 }
-.list-section-three-wrapper {
+.section-three-wrapper {
   position: relative;
 }
 .section-three-header {
   position: absolute;
   bottom: 0;
   width: 100%;
-  padding-top: 27px;
-  padding-bottom: 27px;
+  padding: 27px 0;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -550,10 +559,10 @@ body {
 }
 .portfolio-item {
   width: calc((100% - 60px) / 3);
-  border: 1px solid #eeeeee;
 }
 .portfolio-item-title {
   padding: 20px 24px;
+  border: 1px solid #eeeeee;
 }
 .overlay {
   position: absolute;
@@ -566,7 +575,7 @@ body {
   line-height: 1.56;
   letter-spacing: 0.03em;
   padding: 63px 24px;
-  /* overflow: auto; */
+  overflow: auto;
   transform: translateY(100%);
   transition: transform var(--transition-dur-and-func);
   color: var(--primary-text-color-theme-dark);
@@ -579,4 +588,48 @@ body {
 .list-portfolio:hover .overlay,
 .list-portfolio:focus .overlay {
   transform: translateY(0%);
+}
+
+/* ======= Modal window ======= */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  transition: opacity var(--transition-dur-and-func),
+    visibility var(--transition-dur-and-func);
+}
+.backdrop.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  height: 581px;
+  background-color: var(--primary-text-color-theme-dark);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.modal-close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0;
 }
